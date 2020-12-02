@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Medilab Bootstrap Template - Index</title>
+  <title>Homepage - Rental Mobil Angkasa</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -48,11 +48,7 @@
         <i class="icofont-google-map"></i> Jalan Raya Gedangan, Sidoarjo
       </div>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"> Reach us on Instagram</i></a>
       </div>
     </div>
   </div>
@@ -69,9 +65,8 @@
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
           <li><a href="#departments">Departments</a></li>
-          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#doctors">Mobil</a></li>
           <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -164,7 +159,7 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <a href="https://www.youtube.com/watch?v=5zONWSO-bNE" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
@@ -243,60 +238,53 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Make an Appointment</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Booking Sekarang</h2>
+          <p>Untuk melakukan Booking, anda harus menjadi member kami terlebih dahulu. Menjadi member kami tidak Dipungut biaya apapun !, Anda bisa langsung mengisikan data-data di bawah ini dan menekan tombol Daftar Sekarang</p>
         </div>
 
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
+        <form action="/register" method="post">
+          @csrf
           <div class="form-row">
             <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" name="usernametxt" class="form-control" placeholder="Username Anda">
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <input type="text" name="nametxt" class="form-control" placeholder="Nama Anda">
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="email" name="emailtxt" class="form-control" placeholder="Email Anda">
               <div class="validate"></div>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-4 form-group">
-              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" name="phonetxt" class="form-control" placeholder="Nomor Handphone Anda">
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group">
-              <select name="department" id="department" class="form-control">
-                <option value="">Select Department</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-              </select>
+              <input type="password" name="passwordtxt" class="form-control" placeholder="Password Anda">
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group">
-              <select name="doctor" id="doctor" class="form-control">
-                <option value="">Select Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
+              <input type="password" name="conpasswordtxt" class="form-control" placeholder="Tulis Ulang Password Anda">
               <div class="validate"></div>
             </div>
           </div>
-
-          <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-            <div class="validate"></div>
-          </div>
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <div class="loading">Loading</div>
-            <div class="error-message"></div>
+            <div class="error-message">
+              @if (isset($message))
+                <h3>{{ $message }}</h3>
+              @endif
+            </div>
             <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+          </div> --}}
+          <br>
+          <div class="text-center"><button type="submit" class="appointment-btn scrollto" style="border:0">Daftar Sekarang</button></div><br>
+          <div class="text-center">Anda Sudah Menjadi Member? Silahkan login di bawah ini</div><br>
+          <div class="text-center"><a href="/login" class="appointment-btn scrollto">Login</a></div>
         </form>
 
       </div>

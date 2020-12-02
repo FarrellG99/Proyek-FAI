@@ -996,6 +996,7 @@ section {
 --------------------------------------------------------------*/
 .appointment .php-email-form {
   width: 100%;
+  text-align: center;
 }
 
 .appointment .php-email-form .form-group {

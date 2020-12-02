@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', ['uses'=>'Controller@homepage']);
+
+
+Route::post('/register', ['uses'=>'Controller@register']);

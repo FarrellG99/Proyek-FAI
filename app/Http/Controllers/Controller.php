@@ -16,4 +16,23 @@ class Controller extends BaseController
     public function homepage(){
         return view('homepage');
     }
+
+    public function register(Request $request){
+        $username       = $request->usernametxt;
+        $name           = $request->nametxt;
+        $email          = $request->email;
+        $password       = $request->passwordtxt;
+        $conpassword    = $request->conpasswordtxt;
+        $nohp           = $request->phonetxt;
+
+        $arrTest = array(
+            'username'      => $username,
+            'name'          => $name,
+            'email'         => $email,
+            'password'      => $password,
+            'conpassword'   => $conpassword,
+            'nohp'          => $nohp
+        );
+        dd($arrTest);
+    }
 }
