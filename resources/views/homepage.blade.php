@@ -242,8 +242,16 @@
           <p>Untuk melakukan Booking, anda harus menjadi member kami terlebih dahulu. Menjadi member kami tidak Dipungut biaya apapun !, Anda bisa langsung mengisikan data-data di bawah ini dan menekan tombol Daftar Sekarang</p>
         </div>
 
-        <form action="/register" method="post">
+        <form action="post_register" method="post">
           @csrf
+          @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div>{{ $error }}</div><br>
+            @endforeach
+          @endif
+          @if (session()->has('message'))
+            <h3>{{ session()->get('message') }}</h1>
+          @endif
           <div class="form-row">
             <div class="col-md-4 form-group">
               <input type="text" name="usernametxt" class="form-control" placeholder="Username Anda">

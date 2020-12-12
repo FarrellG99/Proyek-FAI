@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 use Illuminate\Http\Request;
+use App\Models\users;
+use Illuminate\Support\Facades\Hash;
 
 class Controller extends BaseController
 {
@@ -18,21 +20,33 @@ class Controller extends BaseController
     }
 
     public function register(Request $request){
-        $username       = $request->usernametxt;
-        $name           = $request->nametxt;
-        $email          = $request->email;
-        $password       = $request->passwordtxt;
-        $conpassword    = $request->conpasswordtxt;
-        $nohp           = $request->phonetxt;
-
-        $arrTest = array(
-            'username'      => $username,
-            'name'          => $name,
-            'email'         => $email,
-            'password'      => $password,
-            'conpassword'   => $conpassword,
-            'nohp'          => $nohp
-        );
-        dd($arrTest);
+        if($request->validate([
+            'usernametxt' => ['required'],
+            'nametxt' => 'required',
+            'emailtxt' => ['required', 'email'],
+            'phonetxt' => 'required',
+            'passwordtxt' => ['required','min:4', 'same:conpasswordtxt'],
+            'conpasswordtxt' => 'required',
+        ])){
+            $username       = $request->usernametxt;
+            $name           = $request->nametxt;
+            $email          = $request->emailtxt;
+            $nohp           = $request->phonetxt;
+            $password       = $request->passwordtxt;
+            
+            users::create(
+                [
+                    "username"  =>  $username, 
+                    "name"      =>  $name,
+                    "email"     =>  $email, 
+                    "password"  =>  Hash::make($password),
+                    "nohp"      =>  $nohp,
+                    "status"    =>  "aktif",
+                ]
+            );
+            $param['message']   = "registrasi sukses"; 
+            //return redirect()->route("login")->with($param); 
+            return redirect("/")->with($param);
+        }
     }
 }
