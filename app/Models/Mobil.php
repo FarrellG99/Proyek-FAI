@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mobil extends Model
 {
-    //
+    protected $table = 'mobils';
+    protected $primaryKey = 'platnomor';
+    public $incrementing = false;
+    public $timestamps = true;
+
+    protected $fillable = [
+        'platnomor', 'namamobil', 'warna', 'tahunmobil','status',
+    ];
+    
+    public function getall()
+    {
+        return Mobil::get();
+    }
 }

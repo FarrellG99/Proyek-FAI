@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 use Illuminate\Http\Request;
 use App\Models\users;
+use App\Models\Mobil;
 use Illuminate\Support\Facades\Hash;
 
 class Controller extends BaseController
@@ -20,7 +21,8 @@ class Controller extends BaseController
     }
 
     public function adminpage(){
-        return view('admin-page');
+        $param['arrmobil'] = Mobil::get();
+        return view('admin-page')->with($param);
     }
 
     public function register(Request $request){
@@ -53,4 +55,30 @@ class Controller extends BaseController
             return redirect("/")->with($param);
         }
     }
+
+    public function post_tambahmobil(Request $request){
+        $plat           = $request->plattxt;
+        $namamobil      = $request->namamobiltxt;
+        $warna          = $request->warnatxt;
+        $tahun          = $request->tahuntxt;
+
+        Mobil::create(
+            [
+                "platnomor"     =>  $plat, 
+                "namamobil"     =>  $namamobil,
+                "warna"         =>  $warna, 
+                "tahunmobil"    =>  $tahun,
+                "status"        =>  "Ready",
+            ]
+        );
+        $param['message'] = "Mobil ditambahkan !";
+        $param['arrmobil'] = Mobil::get();
+        return redirect("adminpage")->with($param);
+    }
 }
+
+
+
+
+// $arr = array(['Test','Tost']);
+// dd($arr);

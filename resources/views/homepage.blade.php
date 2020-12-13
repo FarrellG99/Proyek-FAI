@@ -10,24 +10,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset("/assets/img/favicon.png") }}" rel="icon">
+  <link href="{{ asset("/assets/img/apple-touch-icon.png") }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/icofont/icofont.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/boxicons/css/boxicons.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/venobox/venobox.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/animate.css/animate.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/remixicon/remixicon.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/owl.carousel/assets/owl.carousel.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css") }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset("/assets/css/style.css") }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Medilab - v2.0.0
@@ -43,12 +43,12 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:angkasamobil@gmail.com">angkasamobil@gmail.com</a>
+        <i class="icofont-envelope"></i> <a href="{{ url("mailto:angkasamobil@gmail.com") }}">angkasamobil@gmail.com</a>
         <i class="icofont-phone"></i> +62 81 2634 5424
         <i class="icofont-google-map"></i> Jalan Raya Gedangan, Sidoarjo
       </div>
       <div class="social-links">
-        <a href="#" class="instagram"><i class="icofont-instagram"> Reach us on Instagram</i></a>
+        <a href="{{ url("#") }}" class="instagram"><i class="icofont-instagram"> Reach us on Instagram</i></a>
       </div>
     </div>
   </div>
@@ -57,39 +57,39 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Rental Mobil Angkasa</a></h1>
+      <h1 class="logo mr-auto"><a href="{{ url("index.html") }}">Rental Mobil Angkasa</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <!-- <a href="{{ url("index.html") }}" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#departments">Departments</a></li>
-          <li><a href="#doctors">Mobil</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+          <li class="active"><a href="{{ url("index.html") }}">Home</a></li>
+          <li><a href="{{ url("#about") }}">About</a></li>
+          <li><a href="{{ url("#departments") }}">Departments</a></li>
+          <li><a href="{{ url("#doctors") }}">Mobil</a></li>
+          <li class="drop-down"><a href="{{ url("") }}">Drop Down</a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
+              <li><a href="{{ url("#") }}">Drop Down 1</a></li>
+              <li class="drop-down"><a href="{{ url("#") }}">Deep Drop Down</a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="{{ url("#") }}">Deep Drop Down 1</a></li>
+                  <li><a href="{{ url("#") }}">Deep Drop Down 2</a></li>
+                  <li><a href="{{ url("#") }}">Deep Drop Down 3</a></li>
+                  <li><a href="{{ url("#") }}">Deep Drop Down 4</a></li>
+                  <li><a href="{{ url("#") }}">Deep Drop Down 5</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="{{ url("#") }}">Drop Down 2</a></li>
+              <li><a href="{{ url("#") }}">Drop Down 3</a></li>
+              <li><a href="{{ url("#") }}">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ url("#contact") }}">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#appointment" class="appointment-btn scrollto">Booking Sekarang</a>
+      <a href="{{ url("#appointment") }}" class="appointment-btn scrollto">Booking Sekarang</a>
 
     </div>
   </header><!-- End Header -->
@@ -99,7 +99,7 @@
     <div class="container">
       <h1>Rental Mobil Angkasa</h1>
       <h2>Menyediakan Mobil Minibus dengan Perawatan terbaik yang pernah ada !</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <a href="{{ url("#about") }}" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
 
@@ -117,7 +117,7 @@
                 Kami adalah Rental mobil spesialis yang menyediakan Mobil-mobil Minibus terkini dan Terawat.
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <a href="{{ url("#") }}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
           </div>
@@ -168,19 +168,19 @@
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <h4 class="title"><a href="{{ url("") }}">Lorem Ipsum</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <h4 class="title"><a href="{{ url("") }}">Nemo Enim</a></h4>
               <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
             </div>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Dine Pad</a></h4>
+              <h4 class="title"><a href="{{ url("") }}">Dine Pad</a></h4>
               <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
             </div>
 
@@ -292,7 +292,7 @@
           <br>
           <div class="text-center"><button type="submit" class="appointment-btn scrollto" style="border:0">Daftar Sekarang</button></div><br>
           <div class="text-center">Anda Sudah Menjadi Member? Silahkan login di bawah ini</div><br>
-          <div class="text-center"><a href="/login" class="appointment-btn scrollto">Login</a></div>
+          <div class="text-center"><a href="{{ url("/login") }}" class="appointment-btn scrollto">Login</a></div>
         </form>
 
       </div>
@@ -311,19 +311,19 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-1">Cardiology</a>
+                <a class="nav-link active show" data-toggle="tab" href="{{ url("#tab-1") }}">Cardiology</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">Neurology</a>
+                <a class="nav-link" data-toggle="tab" href="{{ url("#tab-2") }}">Neurology</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">Hepatology</a>
+                <a class="nav-link" data-toggle="tab" href="{{ url("#tab-3") }}">Hepatology</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-4">Pediatrics</a>
+                <a class="nav-link" data-toggle="tab" href="{{ url("#tab-4") }}">Pediatrics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-5">Eye Care</a>
+                <a class="nav-link" data-toggle="tab" href="{{ url("#tab-5") }}">Eye Care</a>
               </li>
             </ul>
           </div>
@@ -337,7 +337,7 @@
                     <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset("/assets/img/departments-1.jpg") }}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -349,7 +349,7 @@
                     <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset("/assets/img/departments-2.jpg") }}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -361,7 +361,7 @@
                     <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset("/assets/img/departments-3.jpg") }}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -373,7 +373,7 @@
                     <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset("/assets/img/departments-4.jpg") }}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -385,7 +385,7 @@
                     <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset("/assets/img/departments-5.jpg") }}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -409,16 +409,16 @@
 
           <div class="col-lg-6">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset("/assets/img/doctors/doctors-1.jpg") }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Walter White</h4>
                 <span>Chief Medical Officer</span>
                 <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
                 <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  <a href="{{ url("") }}"><i class="ri-twitter-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-facebook-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-instagram-fill"></i></a>
+                  <a href="{{ url("") }}"> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -426,16 +426,16 @@
 
           <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset("/assets/img/doctors/doctors-2.jpg") }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
                 <span>Anesthesiologist</span>
                 <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
                 <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  <a href="{{ url("") }}"><i class="ri-twitter-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-facebook-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-instagram-fill"></i></a>
+                  <a href="{{ url("") }}"> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -443,16 +443,16 @@
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset("/assets/img/doctors/doctors-3.jpg") }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>William Anderson</h4>
                 <span>Cardiology</span>
                 <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
                 <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  <a href="{{ url("") }}"><i class="ri-twitter-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-facebook-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-instagram-fill"></i></a>
+                  <a href="{{ url("") }}"> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -460,16 +460,16 @@
 
           <div class="col-lg-6 mt-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset("/assets/img/doctors/doctors-4.jpg") }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Neurosurgeon</span>
                 <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
                 <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                  <a href="{{ url("") }}"><i class="ri-twitter-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-facebook-fill"></i></a>
+                  <a href="{{ url("") }}"><i class="ri-instagram-fill"></i></a>
+                  <a href="{{ url("") }}"> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -492,7 +492,7 @@
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="{{ url("#faq-list-1") }}">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
                 <p>
                   Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
@@ -501,7 +501,7 @@
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="{{ url("#faq-list-2") }}" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-parent=".faq-list">
                 <p>
                   Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
@@ -510,7 +510,7 @@
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="{{ url("#faq-list-3") }}" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-parent=".faq-list">
                 <p>
                   Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
@@ -519,7 +519,7 @@
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="{{ url("#faq-list-4") }}" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-parent=".faq-list">
                 <p>
                   Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
@@ -528,7 +528,7 @@
             </li>
 
             <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="{{ url("#faq-list-5") }}" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-parent=".faq-list">
                 <p>
                   Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
@@ -550,7 +550,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+              <img src="{{ asset("/assets/img/testimonials/testimonials-1.jpg") }}" class="testimonial-img" alt="">
               <h3>Saul Goodman</h3>
               <h4>Ceo &amp; Founder</h4>
               <p>
@@ -563,7 +563,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <img src="{{ asset("/assets/img/testimonials/testimonials-2.jpg") }}" class="testimonial-img" alt="">
               <h3>Sara Wilsson</h3>
               <h4>Designer</h4>
               <p>
@@ -576,7 +576,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+              <img src="{{ asset("/assets/img/testimonials/testimonials-3.jpg") }}" class="testimonial-img" alt="">
               <h3>Jena Karlis</h3>
               <h4>Store Owner</h4>
               <p>
@@ -589,7 +589,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+              <img src="{{ asset("/assets/img/testimonials/testimonials-4.jpg") }}" class="testimonial-img" alt="">
               <h3>Matt Brandon</h3>
               <h4>Freelancer</h4>
               <p>
@@ -602,7 +602,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+              <img src="{{ asset("/assets/img/testimonials/testimonials-5.jpg") }}" class="testimonial-img" alt="">
               <h3>John Larson</h3>
               <h4>Entrepreneur</h4>
               <p>
@@ -718,22 +718,22 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Privacy policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url("#") }}">Graphic Design</a></li>
             </ul>
           </div>
 
@@ -760,31 +760,31 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="{{ url("#") }}" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="{{ url("#") }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="{{ url("#") }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="{{ url("#") }}" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="{{ url("#") }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="{{ url("#") }}" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <script src="{{ asset("/assets/vendor/jquery/jquery.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/jquery.easing/jquery.easing.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/php-email-form/validate.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/venobox/venobox.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/waypoints/jquery.waypoints.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/counterup/counterup.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/owl.carousel/owl.carousel.min.js") }}"></script>
+  <script src="{{ asset("/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js") }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset("/assets/js/main.js") }}"></script>
 
 </body>
 

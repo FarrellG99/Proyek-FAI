@@ -18,3 +18,4 @@ Route::get('adminpage', ['uses'=>'Controller@adminpage']);
 
 
 Route::post('post_register', ['uses'=>'Controller@register']);
+Route::post('post_tambahmobil', ['uses'=>'Controller@post_tambahmobil']);
