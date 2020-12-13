@@ -19,6 +19,10 @@ class Controller extends BaseController
         return view('homepage');
     }
 
+    public function adminpage(){
+        return view('admin-page');
+    }
+
     public function register(Request $request){
         if($request->validate([
             'usernametxt' => ['required'],
