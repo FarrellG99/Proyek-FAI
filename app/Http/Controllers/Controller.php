@@ -25,6 +25,11 @@ class Controller extends BaseController
         return view('admin-page')->with($param);
     }
 
+    public function bookingpage(){
+        $param['arrmobil'] = Mobil::get();
+        return view('user-page')->with($param);
+    }
+
     public function register(Request $request){
         if($request->validate([
             'usernametxt' => ['required'],
@@ -74,6 +79,19 @@ class Controller extends BaseController
         $param['message'] = "Mobil ditambahkan !";
         $param['arrmobil'] = Mobil::get();
         return redirect("adminpage")->with($param);
+    }
+
+    public function post_booking(Request $request){
+        $plat           = $request->plattxt;
+        $status         = Mobil::where('platnomor','=',$plat)->get('status');
+
+        Mobil::where('platnomor','=',$plat)->update([
+            'status' => 'Sedang dipesan',
+        ]);
+
+        $param['message'] = "Mobil Berhasil Dipesan !";
+        $param['arrmobil'] = Mobil::get();
+        return redirect("userpage")->with($param);
     }
 }
 

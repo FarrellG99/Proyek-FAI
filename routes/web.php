@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', ['uses'=>'Controller@homepage']);
 Route::get('adminpage', ['uses'=>'Controller@adminpage']);
+Route::get('bookingpage', ['uses'=>'Controller@bookingpage']);
 
 
 Route::post('post_register', ['uses'=>'Controller@register']);
 Route::post('post_tambahmobil', ['uses'=>'Controller@post_tambahmobil']);
+Route::post('post_booking', ['uses'=>'Controller@post_booking']);
