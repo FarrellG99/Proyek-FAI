@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2020 at 01:31 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Dec 26, 2020 at 02:00 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,6 +72,7 @@ CREATE TABLE `mobils` (
   `warna` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tahunmobil` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -80,10 +81,14 @@ CREATE TABLE `mobils` (
 -- Dumping data for table `mobils`
 --
 
-INSERT INTO `mobils` (`platnomor`, `namamobil`, `warna`, `tahunmobil`, `status`, `created_at`, `updated_at`) VALUES
-('L2019DOD', 'Kijang Inova VVTI', 'Merah', '2019', 'Sedang dipesan', '2020-12-13 11:18:02', '2020-12-15 09:04:52'),
-('L2019LAS', 'Daihatsu Xenia', 'Silver', '2018', 'Sedang dipesan', '2020-12-13 11:18:51', '2020-12-15 09:06:51'),
-('L2020BEB', 'Toyota Avanza Veloz', 'Silver', '2020', 'Sedang dipesan', NULL, '2020-12-15 09:06:53');
+INSERT INTO `mobils` (`platnomor`, `namamobil`, `warna`, `tahunmobil`, `status`, `foto`, `created_at`, `updated_at`) VALUES
+('L1018PM', 'Daihatsu Ayla', 'Merah', '2019', 'Sedang dipesan', 'ayla.jpg', '2020-12-27 12:55:06', '2020-12-30 12:55:06'),
+('L2019DOD', 'Kijang Inova VVTI', 'Putih', '2019', 'Sedang dipesan', 'kijang.jpg', '2020-12-13 11:18:02', '2020-12-15 09:04:52'),
+('L2019LAS', 'Daihatsu Xenia', 'Hitam', '2018', 'Sedang dipesan', 'xenia.jpg', '2020-12-13 11:18:51', '2020-12-15 09:06:51'),
+('L2020BEB', 'Toyota Avanza Veloz', 'Putih', '2020', 'Sedang dipesan', 'veloz.jpg', NULL, '2020-12-15 09:06:53'),
+('L5430BB', 'Toyota Fortuner', 'Putih', '2018', 'Sedang dipesan', 'fortuner.jpg', '2020-12-26 12:49:59', '2020-12-28 12:49:59'),
+('L7201BG', 'Toyoto Agya', 'Kuning', '2019', 'Sedang dipesan', 'agya.jpg', '2020-12-25 12:57:15', '2020-12-28 12:57:15'),
+('L8790LQ', 'Daihatsu Terios', 'Ungu', '2019', 'Sedang dipesan', 'terios.jpg', '2020-12-23 12:59:41', '2020-12-26 12:59:41');
 
 -- --------------------------------------------------------
 

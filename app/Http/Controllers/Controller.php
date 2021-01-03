@@ -10,14 +10,44 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\users;
 use App\Models\Mobil;
+use App\Models\Booking; 
 use Illuminate\Support\Facades\Hash;
+//use Auth;
+use Illuminate\Support\Facades\Auth as Auth;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function viewdetail($platnomor) {
+        $param['arrmobil'] = Mobil::where('platnomor', '=', $platnomor)->get();
+        return view('viewdetail')->with($param);
+    }
+
+    public function viewabout() {
+        return view('about'); 
+    }
+
+    public function viewcontactus() {
+        return view('contactus'); 
+    }
+
+    public function viewlogin() {
+        $param['message'] = ""; 
+        return view('login')->with($param); 
+    }
+
+    public function viewregister() {
+        return view('register'); 
+    }
+
     public function homepage(){
-        return view('homepage');
+        $param['arrmobil'] = Mobil::get();
+        return view('index')->with($param);
+    }
+
+    public function profile(){
+        return view('profile');
     }
 
     public function adminpage(){
@@ -26,8 +56,29 @@ class Controller extends BaseController
     }
 
     public function bookingpage(){
-        $param['arrmobil'] = Mobil::get();
-        return view('user-page')->with($param);
+        $param['arrbooking'] = Booking::get();
+        $param['arruser']    = users::get();
+        $param['arrmobil']   = Mobil::get();
+        return view('viewbooking')->with($param);
+    }
+
+    public function login(Request $request){
+        if($request->validate([
+            'usernametxt' => ['required'],
+            'passwordtxt' => ['required']
+        ])){
+            $data = [
+                "username"  => $request->usernametxt, 
+                "password"  => $request->passwordtxt 
+            ];
+            if(Auth::attempt($data)) {  // pengecekan login
+                return redirect("/"); 
+            }
+            else {
+                $param['message']   = "Login Failed"; 
+                return view("login")->with($param); 
+            }
+        }
     }
 
     public function register(Request $request){
@@ -56,12 +107,48 @@ class Controller extends BaseController
                 ]
             );
             $param['message']   = "registrasi sukses"; 
-            //return redirect()->route("login")->with($param); 
-            return redirect("/")->with($param);
+            return redirect()->route("login")->with($param); 
+            //return redirect("/")->with($param);
         }
     }
 
+    public function postprofile(Request $request){
+        $username       = $request->usernametxt;
+        $name           = $request->nametxt;
+        $email          = $request->emailtxt;
+        $nohp           = $request->phonetxt;
+        $password       = $request->passwordtxt;
+        
+        users::create(
+            [
+                "username"  =>  $username, 
+                "name"      =>  $name,
+                "email"     =>  $email, 
+                "password"  =>  Hash::make($password),
+                "nohp"      =>  $nohp,
+                "status"    =>  "aktif",
+            ]
+        );
+        $param['message']   = "Update Profile Sukses"; 
+        return redirect("profile")->with($param); 
+        //return redirect("/")->with($param);
+    }
+
     public function post_tambahmobil(Request $request){
+
+        $despath = '';       
+        if($request->hasFile('fotomobil'))
+        {
+            $filefoto     = $request->file('fotomobil');
+            $namafilefoto = pathinfo($filefoto->getClientOriginalName(), PATHINFO_FILENAME).'.'.
+                    $filefoto->getClientOriginalExtension();
+            $filefoto->move($despath, $namafilefoto);   // simpan gambar ke public folder
+        }
+        else 
+        {
+            $namafilefoto = "default.jpg"; 
+        }
+
         $plat           = $request->plattxt;
         $namamobil      = $request->namamobiltxt;
         $warna          = $request->warnatxt;
@@ -81,17 +168,27 @@ class Controller extends BaseController
         return redirect("adminpage")->with($param);
     }
 
+    public function viewhistory() {
+        //return view('viewhistory')->with($param); 
+    }
+
     public function post_booking(Request $request){
-        $plat           = $request->plattxt;
-        $status         = Mobil::where('platnomor','=',$plat)->get('status');
+        $platnomor      = $request->platnomor;
+        $tanggalawal    = $request->tanggalawal; 
+        $tanggalakhir   = $request->tanggalakhir; 
 
-        Mobil::where('platnomor','=',$plat)->update([
-            'status' => 'Sedang dipesan',
-        ]);
+        Booking::create(
+            [
+                "tanggal"       =>  date("Y-m-d"),
+                "username"      =>  Auth::user()->username,
+                "platnomor"     =>  $platnomor, 
+                "awal"          =>  $tanggalawal,
+                "akhir"         =>  $tanggalakhir, 
+                "status"        =>  "Aktif",
+            ]
+        );
 
-        $param['message'] = "Mobil Berhasil Dipesan !";
-        $param['arrmobil'] = Mobil::get();
-        return redirect("userpage")->with($param);
+        return redirect("booking"); 
     }
 }
 
