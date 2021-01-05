@@ -1,0 +1,49 @@
+Nama Database : proyek_fai
+Bagian Proyek : 
+1.Routing : 
+	[
+		Route::get('/', ['uses'=>'Controller@homepage']);
+		Route::get('adminpage', ['uses'=>'Controller@adminpage']);
+		Route::get('bookingpage', ['uses'=>'Controller@bookingpage']);
+
+
+		Route::post('post_register', ['uses'=>'Controller@register']);
+		Route::post('post_tambahmobil', ['uses'=>'Controller@post_tambahmobil']);
+		Route::post('post_booking', ['uses'=>'Controller@post_booking']);
+	]
+	
+2. Fungsionalitas : 
+	[
+		Register User (pada bagian welcomepage) + Auth	- Sudah
+		Login User (Page Belum) + Auth 					- Belum
+		
+		Admin Page 										- Belum Selesai
+			[
+				List Mobil					- Belum selesai
+				[
+					Add Mobil 					- Sudah
+					Delete Mobil				- Belum
+				]
+
+				Block / Banned User 		- Belum
+				Report Page 				- Belum
+			]
+			
+		User Page										- Belum
+			[
+				Edit Profile				- Belum
+				Booking Page (1/2 jadi)		- Belum
+			]
+	]
+	
+3. Email Service 										- Belum
+
+Catatan : 
+1. Pada Page Booking ada Placeholder (di bawah tabel) di situ nanti mau tak keluarin tabel untuk mobil yang sedang dipesan oleh user(belum disetujui oleh admin, bersifat temporary / bisa dibatalkan oleh admin).Pada tabel terdapat button pembatalan, apabila dibatalkan manual oleh user maka status mobil kembali menjadi Tersedia. Apabila Mobil sudah dibook maka Button Booknya disabled
+2. Bagaimana cara Mengetahui name dari button type submit di Post Request ya ? (dibagian page Add Mobil waktu itu aku udah coba tapi nggak bisa pakek $request->).
+3. Desain Tabel H transaksi dan D transaksi bagaimana ya ?
+4. Pinginnya nanti setelah Booking user disetujui oleh admin, maka user akan mendapatkan email dari rental mobil untuk melakukan pengambilan mobil.
+5. Hostingan ready untuk nambah nilai, nanti kumintakan temanku atau tak host sama temanku aja nanti. Github sudah ada.
+
+To DO :
+1. Setelah ini aku bakal ngerubah tampilannya jadi pakek blade elemen(pakek include sama yield).
