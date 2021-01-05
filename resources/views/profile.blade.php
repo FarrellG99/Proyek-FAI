@@ -40,7 +40,7 @@
           <h4>Email  : </h4>
         </div>
         <div class="col-md-4">
-          <input type="email" class="form-control" placeholder="Email" name="emailtxt" value="{{ Auth::User()->name }}">
+          <input type="email" class="form-control" placeholder="Email" name="emailtxt" value="{{ Auth::User()->email }}">
         </div>
       </div>
       <br>

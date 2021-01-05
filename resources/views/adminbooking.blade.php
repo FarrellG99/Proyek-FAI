@@ -8,7 +8,7 @@
                 @php $ada = 0 @endphp 
                 @foreach($arrbooking as $row) 
                     @foreach($arruser as $rowuser)
-                        @if($row->username == $rowuser->username && $row->username == Auth::User()->username)
+                        @if($row->username == $rowuser->username)
                             @foreach($arrmobil as $rowmobil)
                                 @if($rowmobil->platnomor == $row->platnomor)
                                     @php $skrg = date("Y-m-d") @endphp
@@ -68,5 +68,5 @@
         </div>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
 @endsection

@@ -8,12 +8,12 @@
                 @php $ada = 0 @endphp 
                 @foreach($arrbooking as $row) 
                     @foreach($arruser as $rowuser)
-                        @if($row->username == $rowuser->username && $row->username == Auth::User()->username)
+                        @if($row->username == $rowuser->username)
                             @foreach($arrmobil as $rowmobil)
                                 @if($rowmobil->platnomor == $row->platnomor)
                                     @php $skrg = date("Y-m-d") @endphp
 
-                                    @if($skrg <= $row->akhir)
+                                    @if($skrg > $row->akhir)
                                         @php $ada+=1 @endphp
                                         <tr>
                                             <td>
@@ -30,7 +30,7 @@
                                                 @elseif ($skrg < $row->akhir)
                                                     <h6 style='color:red;'>Sedang Berjalan</h6>
                                                 @else 
-                                                    <h6>&nbsp;</h6>
+                                                <h6 style='color:red;'>Selesai</h6>
                                                 @endif
                                             </td>
                                             <td>
@@ -61,12 +61,12 @@
 
                 @if ($ada == 0) 
                     <tr>
-                        <td><h4>no booking transaction for now</h4></td>
+                        <td><h4>no history transaction for now</h4></td>
                     </tr>
                 @endif
             </table>
         </div>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 @endsection

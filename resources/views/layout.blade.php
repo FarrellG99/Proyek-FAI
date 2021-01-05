@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin Page</title>
+  <title>Rental Mobil Angkasa</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -43,9 +43,9 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="{{ url("mailto:contact@example.com") }}">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
-        <i class="icofont-google-map"></i> A108 Adam Street, NY
+        <i class="icofont-envelope"></i> <a href="{{ url("mailto:contact@example.com") }}">angkasamobil@gmail.com</a>
+        <i class="icofont-phone"></i> +62 81 2634 5424
+        <i class="icofont-google-map"></i> Jalan Raya Gedangan, Sidoarjo
       </div>
       <div class="social-links">
         <a href="{{ url("#") }}" class="twitter"><i class="icofont-twitter"></i></a>
@@ -70,20 +70,32 @@
           <ul>
             <li><a href="{{ url("/") }}">Home</a></li>
             <li><a href="{{ url("about") }}">About</a></li>
-            <li><a href="{{ url("search") }}">Search</a></li>
             <li><a href="{{ url("login") }}">Login</a></li>
             <li><a href="{{ url("register") }}">Register</a></li>
             <li><a href="{{ url("contactus") }}">Contact Us</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+      @elseif (Auth::User()->username == "admin")
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="{{ url("/") }}">Home</a></li>
+            <li><a href="{{ url("adminmobil") }}">Mobil</a></li>
+            <li><a href="{{ url("adminuser") }}">Users</a></li>
+            <li><a href="{{ url("adminbooking") }}">Booking</a></li>
+            <li><a href="{{ url("adminhistory") }}">History</a></li>
+            <li><a href="{{ url("profile") }}">Profile</a></li>
+            <li><a href="{{ url("password") }}">Password</a></li>
+            <li><a href="{{ url("logout") }}">Logout</a></li>
           </ul>
         </nav><!-- .nav-menu -->
       @else 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li><a href="{{ url("/") }}">Home</a></li>
-            <li><a href="{{ url("search") }}">Search</a></li>
             <li><a href="{{ url("booking") }}">Booking</a></li>
             <li><a href="{{ url("history") }}">History</a></li>
             <li><a href="{{ url("profile") }}">Profile</a></li>
+            <li><a href="{{ url("password") }}">Password</a></li>
             <li><a href="{{ url("logout") }}">Logout</a></li>
           </ul>
         </nav><!-- .nav-menu -->

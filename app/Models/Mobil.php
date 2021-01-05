@@ -12,7 +12,7 @@ class Mobil extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'platnomor', 'namamobil', 'warna', 'tahunmobil','status',
+        'platnomor', 'namamobil', 'warna', 'tahunmobil', 'status', 'foto', 'hargamobil'
     ];
     
     public function getall()

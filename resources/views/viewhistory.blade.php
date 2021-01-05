@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-12">
             <table class='table table-splitted'>
-                @php $ada = 0 @endphp 
+                @php $ada = 0 @endphp
                 @foreach($arrbooking as $row) 
                     @foreach($arruser as $rowuser)
                         @if($row->username == $rowuser->username && $row->username == Auth::User()->username)
@@ -13,8 +13,8 @@
                                 @if($rowmobil->platnomor == $row->platnomor)
                                     @php $skrg = date("Y-m-d") @endphp
 
-                                    @if($skrg <= $row->akhir)
-                                        @php $ada+=1 @endphp
+                                    @if($skrg > $row->akhir)
+                                    @php $ada+=1 @endphp
                                         <tr>
                                             <td>
                                                 <h6>Nota : {{ $row->id }}</h6>
@@ -61,12 +61,12 @@
 
                 @if ($ada == 0) 
                     <tr>
-                        <td><h4>no booking transaction for now</h4></td>
+                        <td><h4>no hihstory transaction for now</h4></td>
                     </tr>
                 @endif
             </table>
         </div>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 @endsection
